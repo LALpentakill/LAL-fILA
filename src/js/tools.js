@@ -303,6 +303,7 @@ var tools = {
 				if(ajax.status === 200){
 					// 判断isJson是否传进来了
 					isJson = isJson === undefined ? true : isJson;
+					console.log(ajax.responseText);
 					succCb && succCb(isJson ? JSON.parse(ajax.responseText) : ajax.responseText);
 				}
 			}

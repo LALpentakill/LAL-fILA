@@ -21,7 +21,7 @@ header .header .logo a{
     background-size: 100px 33px;
 }
 header .right{
-    width: 460px;
+    width: 500px;
     height: 65px;
     float: right;
     padding-top: 35px;
@@ -31,7 +31,10 @@ header .right input{
     outline: none;
     border: none;
     border-bottom: 1px solid;
-    
+    float: left;
+}
+header .right .search{
+    float: left;
 }
 header .right .suggest{
    position: absolute;
@@ -43,16 +46,28 @@ header .right .suggest ul li{
    font-size: 12px;
    margin: 5px;
 }
-header .right a:nth-child(5){
+header .right #regis{
     text-decoration: none;
     color: #000000;
     margin-right: 16px;
     font-size: 15px;
 }
-header .right a:nth-child(4){
+header .right #login{
     margin-left: 38px;
     text-decoration: none;
     color: #000000;
+    margin-right: 16px;
+    font-size: 15px;
+}
+header .right #huanying{
+    display: none;
+    float: left;
+    margin:0px 16px;
+    font-size: 15px;
+}
+header .right #cancel{
+    display: none;
+    float: left;
     margin-right: 16px;
     font-size: 15px;
 }
@@ -65,12 +80,19 @@ header .header .right .shop{
     align-items: center;
 }
 header .header .right .shop a:nth-child(1) {
-    width: 18px;
+    display: block;
+    width: 23px;
     height: 16px;
-    background: url(../img/shop.jpg) no-repeat center center;
+    background: url(../img/shop.jpg) no-repeat center left;
     /*float: left;*/
 }
+header .header .right .shop a:nth-child(1) #carnum{
+    color: red;
+    font-weight: bolder;
+    float: right;
+}
 header .header .right .shop a:nth-child(2) {
+    display: block;
     width: 22px;
     height: 22px;
     background: url(../img/china.jpg) no-repeat center center;

@@ -5,6 +5,14 @@ require.config({
 		"header" : "js/module/header",
 		"footer" : "js/module/footer",
 		"main"	 : "js/module/main",
-		"url" :"js/modul/url",
+		"url" :"js/module/url",
+		"template" : "libs/art-template/template-web",
+		"tools" : "js/tools",
+		"fly" : "libs/jquery-plugins/jquery.fly.min"
+	},
+	shim : {
+		"fly" : {
+			deps : ["jquery"]
+		}
 	}
 })

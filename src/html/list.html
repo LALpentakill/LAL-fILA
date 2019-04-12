@@ -5,8 +5,9 @@
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="/css/list.css"/>
 		<link rel="stylesheet" type="text/css" href="/libs/bootstrap/css/bootstrap.css"/>
-		<script type="text/javascript" src="/libs/js/jquery-1.11.3.min.js"></script>
-		<script type="text/javascript" src="/libs/js/bootstrap.min.js"></script>
+		<!--<script type="text/javascript" src="/libs/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="/libs/js/bootstrap.min.js"></script>-->
+		<script type="text/javascript" src="/libs/art-template/template-web.js"></script>
 	</head>
 	<body>
 		<div id="header-container"></div>
@@ -23,8 +24,26 @@
 					<p>筛选</p>
 				</div>
 			</div>
+			<div class="cathList" id="catyListContainer">
+				
+			</div>
 		</div>
+        <script type="text/html" id="catyList">
+            <ul>
+                {{each list item}}
+                <li class="xq">
+                    <a href="/html/detail.html?id={{ item.id }}">   
+                       	<img src="{{ item.img }}" alt="">
+                        <p class="text">{{ item.title }}</p> 
+                    </a>
+                    <p class="cle">
+                        <span>￥</span><span class=" price">{{ item.price }}</span>                                             
+                    </p>
+                </li>
+                {{ /each }}
+            </ul>                  
+        </script>
 		<div id="footer-container"></div>
-		<script type="text/javascript" src="/libs/requirejs/require.js" data-main="/js/index.js"></script>
+		<script type="text/javascript" src="/libs/requirejs/require.js" data-main="/js/list.js"></script>
 	</body>
 </html>

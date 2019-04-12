@@ -7,7 +7,7 @@ main{
 }
 main .nav{
     width: 333px;
-    height: 172px;
+    height: 300px;
     margin: 0px auto;
     padding-top: 60px;
     
@@ -34,7 +34,7 @@ main .nav .logo a{
 }
 main .nav form{
     width: 333px;
-    height: 140px;
+    height: 200px;
 }
 main .nav form .number{
     width: 331px;
@@ -57,15 +57,20 @@ main .nav form .pas{
 main .nav form .yz{
     width: 124px;
     height: 38px;
+    line-height: 38px;
+    font-size: 20px;
+    font-weight: bolder;
     float: right;
     border:1px solid #e8e8e8;
     border-left: none;
-    background-color: #117A8B;
+    background-color:#138496;
     margin: 10px 0px;
     box-sizing: border-box;
+    text-align: center;
 }
 main .nav form a{
     float: left;
+    margin-top: 10px;
     width: 333px;
     height: 38px;
     text-align: center;

@@ -5,6 +5,8 @@ define(["jquery"], function ($) {
 			this.textfield = $("#textfield");
 			this.searchContainer = $("#search_result_search_fm");
 			this.search();
+			this.denglu();
+			this.carnum();
 			})
 		}
 		init () {
@@ -13,6 +15,7 @@ define(["jquery"], function ($) {
 					// 回调函数，指的是load加载结束以后执行的代码
 					/*resolve();*/
 					resolve();
+					
 				});
 			})
 		}
@@ -51,6 +54,82 @@ define(["jquery"], function ($) {
 					_this.searchContainer.hide();
 				})
 			}
+		denglu() {
+			var _this = this;
+			this.huanying = $("#huanying");
+			this.cancel = $("#cancel");
+			this.login = $("#login");
+			this.regis = $("#regis");
+			this.yonghuming=$("#name");
+			var loginObj = localStorage.getItem("loginObj");
+			//console.log(loginObj)
+			if (loginObj) {
+               loginObj= JSON.parse(loginObj)
+               _this.cancel.css({
+   						"display": "block"
+					})
+               _this.login.css({
+   						"display": "none"
+					})
+               this.regis.css({
+               		"display": "none"
+               })
+               _this.huanying.css({
+   						"display": "block"
+					})
+               _this.yonghuming.html(loginObj.username);
+
+			}
+			_this.cancel.on("click",function(){
+				if(confirm("确定退出？")){
+					_this.cancel.css({
+   						"display": "none"
+					})
+               _this.login.css({
+   						"display": "block", 
+   						"float":"left"
+					})
+               _this.regis.css({
+               		"display": "block",
+               		"float":"left"
+               })
+               _this.huanying.css({
+   						"display": "none"
+					})
+               localStorage.removeItem("loginObj");
+				}
+				
+				
+			})
+		}
+		carnum(){
+		//this.num=$("#carnum");
+		//this.mide=$(".mide");
+			var cart1 = localStorage.getItem("cart");
+			//console.log(cart1)
+				if (cart1) {	
+					cart1 = JSON.parse(cart1);
+					//console.log(cart1)
+					let num = cart1.reduce(function(num, prod) {
+						num += Number(prod.num);
+						return num;
+					}, 0);
+					//console.log(num)
+	
+					$("#carnum").html(num);
+				}
+		}
+		/*let num=0;
+		for (var i=0;i < mide.length;i++) {
+				
+			num += Number(mide[i].innerHTML);
+			console.log(num);
+				
+		}
+			this.num.html(num);
+		}
+		
+		*/
 	}
 	return new Header();
 })
