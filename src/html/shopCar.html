@@ -16,12 +16,15 @@
 					<a href="#"></a>
 					<a href="#">添加收货信息</a>
 				</div>
+				<input type="checkbox" id="checkAll"/>
 				<p class="s-mes">商品信息</p>
 				<ul>
+					
 					<li style="margin-right: 140px;">单价</li>
 					<li style="margin-right: 95px;">数量</li>
 					<li style="margin-right: 117px;">小计</li>
 					<li style="margin-right: 111px;">操作</li>
+					
 				</ul>
 			</div>
 			<ul class="recommond" id="recommond">
@@ -47,7 +50,7 @@
 				<li deta-id="{{item.id}}">
 					<!--<input type="checkbox" id="checkAll" /><span>普通商品</span>-->
 					<div class="shangp-warp">
-						<input type="checkbox" id="checkbox1" />
+						<input type="checkbox" id="checkbox1" class="checkbox1" />
 						<a href="javascript:;" class="shangp"><img src="{{item.imgs}}"/></a>
 						<p class="title">{{item.title}}</p>
 						<div class="price">￥<b id="price">{{item.newPrice}}</b></div>

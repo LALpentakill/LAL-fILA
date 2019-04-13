@@ -17,6 +17,7 @@ require(["require.config"], function() {
 	        this.getDom();
 	        this.moneyBox();
 	        this.shanChu();
+	        this.quanxuan();
         
         },
       	getDom(){
@@ -97,14 +98,14 @@ require(["require.config"], function() {
 		},
 		moneyBox(){
 			var allPrice =$(".allprice").get();
-			console.log(allPrice)
+			//console.log(allPrice)
 			var jiesuan =$(".jiesuan");
 			var zongjia =$(".zongjia");
 			let money=0;
 			for (var i=0;i < allPrice.length;i++) {
 				
 				money += Number(allPrice[i].innerHTML);
-				console.log(money);
+				//console.log(money);
 				
 			}
 			//console.log(jiesuan)
@@ -131,9 +132,29 @@ require(["require.config"], function() {
 					localStorage.setItem("cart",JSON.stringify(scid))
 					//_this.render();
 					$(this).parent().parent().remove();
-					_this.render();
+					//_this.render();
 				}
 			})
+		},
+		quanxuan(){
+			var checkAll = document.querySelector("#checkAll");
+			console.log(checkAll)
+			var aCheck = document.querySelectorAll(".checkbox1");
+			console.log(aCheck)
+			var n = 0;
+			checkAll.onchange=function(){
+				console.log(111)
+				n = checkAll.checked ? aCheck.length : 0;
+				for(var i = 0; i < aCheck.length; i++){
+					aCheck[i].checked = checkAll.checked;
+				}
+			}
+			for(var j = 0; j < aCheck.length; j++){
+				aCheck[j].onchange = function(){
+					this.checked ? n++ : n--;
+					checkAll.checked = n === aCheck.length;
+				}
+			}
 		}
     })
     

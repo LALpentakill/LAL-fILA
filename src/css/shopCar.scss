@@ -11,7 +11,8 @@
 }
 .center{
     width: 100%;
-    min-height:1072px ;
+    min-height:1030px ;
+    overflow: hidden;
 }
 .center .address{
     width: 93%;
@@ -62,6 +63,11 @@
     flex-direction:row ;
     float: right;
 }
+.center .address #checkAll{
+    margin-top: 35px;
+    float: left;
+}
+
 .center .address ul li{
     width: 35px;
     height:30px;
@@ -71,10 +77,10 @@
 }
 .center .recommond{
     width: 93%;
-    min-height: 225px;
+    min-height: 127px;
     margin: 0px auto;
     border-bottom: 1px solid #dedede;
-    padding-top: 20px;
+    padding-top: 60px;
 }
 .center .recommond #checkAll{
     margin-top: 42px;
@@ -192,6 +198,7 @@
     height: 190px;
     margin: 0px auto;
     border-bottom: 1px solid #dedede;
+    float: left;
 }
 .center .end .two{
     width:238px;
